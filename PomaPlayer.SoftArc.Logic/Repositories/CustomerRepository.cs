@@ -5,7 +5,7 @@ using PomaPlayer.SoftArc.Storage.Models;
 
 namespace PomaPlayer.SoftArc.Logic.Repositories
 {
-    public class CustomerRepository : IRepository<Customer>
+    public sealed class CustomerRepository : IRepository<Customer>
     {
         public Customer Create(DataContext dataContext, Customer model)
         {
@@ -47,10 +47,10 @@ namespace PomaPlayer.SoftArc.Logic.Repositories
                 ?? throw new Exception($"Центра с идентификатором {model.IsnCenter} не существует");
 
             customer.IsnCenter = model.IsnCenter;
-            customer.SurName= model.SurName;
+            customer.SurName = model.SurName;
             customer.Name = model.Name;
             customer.LastName = model.LastName;
-            customer.Birthday= model.Birthday;
+            customer.Birthday = model.Birthday;
             customer.Center = center;
 
             return customer;

@@ -6,7 +6,7 @@ using PomaPlayer.SoftArc.Storage.Models;
 
 namespace PomaPlayer.SoftArc.Logic.Services
 {
-    public class CustomerService : ICustomerService
+    public sealed class CustomerService : ICustomerService
     {
         public IQueryable<Customer> GetCustomersQueryable(DataContext dataContext, CustomerFilter filter)
         {

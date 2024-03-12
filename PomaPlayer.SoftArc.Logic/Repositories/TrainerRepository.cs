@@ -5,7 +5,7 @@ using PomaPlayer.SoftArc.Storage.Models;
 
 namespace PomaPlayer.SoftArc.Logic.Repositories
 {
-    public class TrainerRepository : IRepository<Trainer>
+    public sealed class TrainerRepository : IRepository<Trainer>
     {
         public Trainer Create(DataContext dataContext, Trainer model)
         {

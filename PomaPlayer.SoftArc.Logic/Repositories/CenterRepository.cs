@@ -5,7 +5,7 @@ using PomaPlayer.SoftArc.Storage.Models;
 
 namespace PomaPlayer.SoftArc.Logic.Repositories
 {
-    public class CenterRepository : IRepository<Center>
+    public sealed class CenterRepository : IRepository<Center>
     {
         public Center Create(DataContext dataContext, Center model)
         {

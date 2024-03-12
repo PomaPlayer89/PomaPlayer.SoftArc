@@ -12,7 +12,7 @@ using PomaPlayer.SoftArc.Web.Features.Interfaces;
 
 namespace PomaPlayer.SoftArc.Web.Features.Managers
 {
-    public class TrainerManager : ITrainerManager
+    public sealed class TrainerManager : ITrainerManager
     {
         private readonly IMapper _mapper;
         private readonly ITrainerService _trainerService;

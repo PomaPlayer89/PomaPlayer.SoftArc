@@ -4,7 +4,7 @@ using PomaPlayer.SoftArc.Web.Features.DtoModels.Center;
 
 namespace PomaPlayer.SoftArc.Web.Features.Mappers
 {
-    public class CenterMapper : Profile
+    public sealed class CenterMapper : Profile
     {
         public CenterMapper()
         {

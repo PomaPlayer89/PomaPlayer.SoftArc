@@ -12,7 +12,7 @@ using PomaPlayer.SoftArc.Web.Features.Interfaces;
 
 namespace PomaPlayer.SoftArc.Web.Features.Managers
 {
-    public class CenterManager : ICenterManager
+    public sealed class CenterManager : ICenterManager
     {
         private readonly IMapper _mapper;
         private readonly ICenterService _centerService;

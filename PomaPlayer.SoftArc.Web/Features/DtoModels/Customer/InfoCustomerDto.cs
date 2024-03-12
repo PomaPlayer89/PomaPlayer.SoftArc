@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PomaPlayer.SoftArc.Web.Features.DtoModels.Customer
 {
-    public class InfoCustomerDto
+    public sealed record InfoCustomerDto
     {
         [Display(Name = "InfoCustomerDto_IsnNode", ResourceType = typeof(Resource))]
         public Guid IsnNode { get; init; }

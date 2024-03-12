@@ -4,7 +4,7 @@ using PomaPlayer.SoftArc.Web.Features.DtoModels.Trainer;
 
 namespace PomaPlayer.SoftArc.Web.Features.Mappers
 {
-    public class TrainerMapper : Profile
+    public sealed class TrainerMapper : Profile
     {
         public TrainerMapper()
         {

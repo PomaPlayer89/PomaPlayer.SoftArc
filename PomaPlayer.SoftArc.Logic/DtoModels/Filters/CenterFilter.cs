@@ -1,6 +1,6 @@
 ﻿namespace PomaPlayer.SoftArc.Logic.DtoModels.Filters
 {
-    public class CenterFilter
+    public sealed class CenterFilter
     {
 
     }

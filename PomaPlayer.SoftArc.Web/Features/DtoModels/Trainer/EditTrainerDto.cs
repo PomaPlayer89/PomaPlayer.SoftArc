@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace PomaPlayer.SoftArc.Web.Features.DtoModels.Trainer
 {
     // todo: вместо атрибутов валидации можно использовать FluentValidation
-    public class EditTrainerDto
+    public sealed record EditTrainerDto
     {
         [Display(Name = "EditTrainerDto_IsnNode", ResourceType = typeof(Resource))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resource))]

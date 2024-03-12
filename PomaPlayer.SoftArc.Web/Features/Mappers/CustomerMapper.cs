@@ -4,7 +4,7 @@ using PomaPlayer.SoftArc.Web.Features.DtoModels.Customer;
 
 namespace PomaPlayer.SoftArc.Web.Features.Mappers
 {
-    public class CustomerMapper : Profile
+    public sealed class CustomerMapper : Profile
     {
         public CustomerMapper()
         {

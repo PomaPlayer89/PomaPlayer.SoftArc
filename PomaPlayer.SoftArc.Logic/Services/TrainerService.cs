@@ -6,7 +6,7 @@ using PomaPlayer.SoftArc.Storage.Models;
 
 namespace PomaPlayer.SoftArc.Logic.Services
 {
-    public class TrainerService : ITrainerService
+    public sealed class TrainerService : ITrainerService
     {
         public void SetBindWithCustomer(DataContext dataContext, Guid isnTrainer, Guid isnCustomer)
         {
