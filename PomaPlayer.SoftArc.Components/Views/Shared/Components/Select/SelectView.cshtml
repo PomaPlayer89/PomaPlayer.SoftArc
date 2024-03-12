@@ -1,0 +1,30 @@
+﻿@using PomaPlayer.SoftArc.Components.ViewModels;
+
+@model SelectViewModel
+
+<div class="form-group mb-3 form-element @(Model.DivClass ?? string.Empty)" style="@(Model.HideRow ? "display:none;" : null)">
+    @if (Model.Hidden != null)
+    {
+        @Model.Hidden
+    }
+    @if (Model.LabelShow && Model.Label != null)
+    {
+        @Model.Label
+    }
+    @if (Model.Select != null)
+    {
+        @Model.Select
+    }
+    @if (!string.IsNullOrEmpty(Model.InfoText))
+    {
+        <div class="form-text">
+            <p>@Model.InfoText</p>
+        </div>
+    }
+    @if (Model.ValidationMessage != null)
+    {
+        <div class="text-danger">
+            @Model.ValidationMessage
+        </div>
+    }
+</div>

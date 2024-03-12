@@ -1,0 +1,47 @@
+﻿@using PomaPlayer.SoftArc.Web.Controllers;
+@using PomaPlayer.SoftArc.Web.Features.DtoModels.Center;
+@model CenterDto[]
+@{
+    ViewBag.Title = "Список центров";
+}
+
+<div class="container">
+    <div class="container">
+        <a class="btn btn-outline-success" href="@Url.ActionLink(nameof(ManageController.Center), ManageController.Manage)">Создать центр</a>
+    </div>
+</div>
+
+<div class="container mt-2">
+    <h3 class="text-center mb-4">Список центров</h3>
+    <table class="table table-bordered table-hover align-middle text-center">
+        <thead>
+            <tr>
+                <th scope="col">Наименование</th>
+                <th scope="col">Город</th>
+                <th scope="col">Улица</th>
+                <th scope="col">Дом</th>
+                <th scope="col">Сведения</th>
+                <th scope="col">Изменить</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.AddressCity</td>
+                        <td>@item.AddressStreet</td>
+                        <td>@item.AddressNumberHouse</td>
+                        <td>
+                            @Html.ActionLink("Смотреть", nameof(ManageController.GetInfoCenter), ManageController.Manage, new { isnCenter = item.IsnNode  })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Изменить", nameof(ManageController.GetEditCenter), ManageController.Manage, new { isnCenter = item.IsnNode  })
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

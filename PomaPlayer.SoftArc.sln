@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomaPlayer.SoftArc.Storage", "PomaPlayer.SoftwareArchitecture.Storage\PomaPlayer.SoftArc.Storage.csproj", "{3B435077-AA5A-4D83-9633-17A311C55E97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomaPlayer.SoftArc.Storage.MS_SQL", "PomaPlayer.SoftwareArchitecture.Storage.MS_SQL\PomaPlayer.SoftArc.Storage.MS_SQL.csproj", "{50005486-7A3B-4985-8012-3DBE9E379371}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomaPlayer.SoftArc.Web", "PomaPlayer.SoftArc.Web\PomaPlayer.SoftArc.Web.csproj", "{0A4DE51A-C5F5-4DA0-8D89-F111CD1AC38C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomaPlayer.SoftArc.Logic", "PomaPlayer.SoftArc.Logic\PomaPlayer.SoftArc.Logic.csproj", "{3117F361-04C9-48F8-B3EC-621635E8E178}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomaPlayer.SoftArc.Components", "PomaPlayer.SoftArc.Components\PomaPlayer.SoftArc.Components.csproj", "{EE535951-D80E-4341-A969-C1DD69B6B3F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B435077-AA5A-4D83-9633-17A311C55E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B435077-AA5A-4D83-9633-17A311C55E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B435077-AA5A-4D83-9633-17A311C55E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B435077-AA5A-4D83-9633-17A311C55E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50005486-7A3B-4985-8012-3DBE9E379371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50005486-7A3B-4985-8012-3DBE9E379371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50005486-7A3B-4985-8012-3DBE9E379371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50005486-7A3B-4985-8012-3DBE9E379371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A4DE51A-C5F5-4DA0-8D89-F111CD1AC38C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4DE51A-C5F5-4DA0-8D89-F111CD1AC38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4DE51A-C5F5-4DA0-8D89-F111CD1AC38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4DE51A-C5F5-4DA0-8D89-F111CD1AC38C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3117F361-04C9-48F8-B3EC-621635E8E178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3117F361-04C9-48F8-B3EC-621635E8E178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3117F361-04C9-48F8-B3EC-621635E8E178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3117F361-04C9-48F8-B3EC-621635E8E178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE535951-D80E-4341-A969-C1DD69B6B3F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE535951-D80E-4341-A969-C1DD69B6B3F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE535951-D80E-4341-A969-C1DD69B6B3F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE535951-D80E-4341-A969-C1DD69B6B3F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24362119-C41A-45E4-B029-3B6547AD3DB7}
+	EndGlobalSection
+EndGlobal

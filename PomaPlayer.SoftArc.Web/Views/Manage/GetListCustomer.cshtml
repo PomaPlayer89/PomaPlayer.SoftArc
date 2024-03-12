@@ -1,0 +1,47 @@
+﻿@using PomaPlayer.SoftArc.Web.Controllers;
+@using PomaPlayer.SoftArc.Web.Features.DtoModels.Customer;
+@model CustomerDto[]
+@{
+    ViewBag.Title = "Список клиентов";
+}
+
+<div class="container">
+    <div class="container">
+        <a class="btn btn-outline-success" href="@Url.ActionLink(nameof(ManageController.Customer), ManageController.Manage)">Создать клиента</a>
+    </div>
+</div>
+
+<div class="container mt-2">
+    <h3 class="text-center mb-4">Список клиентов</h3>
+    <table class="table table-bordered table-hover align-middle text-center">
+        <thead>
+            <tr>
+                <th scope="col">Фамилия</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Отчество</th>
+                <th scope="col">Дата рождения</th>
+                <th scope="col">Сведения</th>
+                <th scope="col">Изменить</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.SurName</td>
+                        <td>@item.Name</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Birthday.ToShortDateString()</td>
+                        <td>
+                            @Html.ActionLink("Смотреть", nameof(ManageController.GetInfoCustomer), ManageController.Manage, new { isnCustomer = item.IsnNode  })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Изменить", nameof(ManageController.GetEditCustomer), ManageController.Manage, new { isnCustomer = item.IsnNode  })
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

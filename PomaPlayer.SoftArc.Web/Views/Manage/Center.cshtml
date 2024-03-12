@@ -1,0 +1,65 @@
+﻿@using PomaPlayer.SoftArc.Components.Extensions;
+@using PomaPlayer.SoftArc.Web.Controllers;
+@using PomaPlayer.SoftArc.Web.Features.DtoModels.Center;
+@model EditCenterDto
+@{
+    ViewBag.Title = "Центр";
+}
+
+<div class="container m-auto w-75 mx-auto mt-3">
+    <div class="row bg-white shadow-sm">
+        <div class="col border rounded p-4">
+            <h3 class="text-center mb-4">Центр</h3>
+            @using (Html.BeginForm(Model.IsnNode == Guid.Empty ? nameof(ManageController.CreateCenter) : nameof(ManageController.UpdateCenter), ManageController.Manage, FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.IsnNode)
+                <div class="form-group mb-3 form-element text-danger">
+                    @Html.ValidationSummary(true)
+                </div>
+                <div class="row">
+                    <div class="col">
+                        @await Component.TextAsync(Html, m => m.Name)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        @await Component.TextAsync(Html, m => m.AddressCity)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        @await Component.TextAsync(Html, m => m.AddressStreet)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        @await Component.TextAsync(Html, m => m.AddressNumberHouse)
+                    </div>
+                </div>
+                <div class="form-group mb-3 form-element">
+                    <div class="float-start">
+                        @if (Model.IsnNode == Guid.Empty)
+                        {
+                            <a class="btn btn-outline-success" href="@Url.ActionLink(nameof(ManageController.GetListCenters), ManageController.Manage)">Назад</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-success" href="@Url.ActionLink(nameof(ManageController.GetInfoCenter), ManageController.Manage, new { isnCenter = Model.IsnNode })">Назад</a>
+                        }
+                    </div>
+                    <div class="float-end">
+                        @if (Model.IsnNode == Guid.Empty)
+                        {
+                            <button type="submit" value="true" class="btn btn-outline-primary">Добавить</button>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-danger" href="@Url.ActionLink(nameof(ManageController.DeleteCenter), ManageController.Manage, new { isnCenter = Model.IsnNode })">Удалить</a>
+                            <button type="submit" value="true" class="btn btn-outline-secondary">Изменить</button>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

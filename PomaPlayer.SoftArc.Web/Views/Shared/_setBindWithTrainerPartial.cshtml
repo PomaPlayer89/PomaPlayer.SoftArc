@@ -1,0 +1,63 @@
+﻿@using PomaPlayer.SoftArc.Components.Extensions;
+@using PomaPlayer.SoftArc.Web.Controllers;
+@using PomaPlayer.SoftArc.Web.Features.DtoModels.Center;
+@using PomaPlayer.SoftArc.Web.Features.Interfaces;
+@inject ITrainerManager _trainerManager
+@model SetBindWithTrainerDto
+@{
+    // todo: внедрять во views какие-то services, managers и тд "НЕЛЬЗЯ", если нужно подтянуть какие-то данные используем ajax запросы к методам controller (сейчас это сделано для упрощения кода)
+    // todo: НО внедрять IHtmlLocalizer (интерфейс локализации строк) допускается
+    var trainers = await _trainerManager.GetListTrainersDropDownAsync(Model.IsnCenter);
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnAddTrainer').on('click', function () {
+
+            var sendData = JSON.stringify({
+                isnCenter: '@Model.IsnCenter',
+                isnTrainer: $('#@nameof(SetBindWithTrainerDto.IsnTrainer)').val()
+            });
+
+            $.ajax({
+                type: 'post',
+                url: '@Url.ActionLink(nameof(ManageController.SetBindWithTrainer), ManageController.Manage)',
+                contentType: 'application/json',
+                data: sendData,
+                success: function (data) {
+                    window.location.reload();
+                },
+                error: function (request, status, error) {
+                    // todo: по-хорошему нужно обрабатывать ошибку и писать ее в html блок формируемый ValidationSummary формы или в ValidationSummary свойства
+                    console.log(request);
+                    alert('Произошла ошибка при выполнении запроса!');
+                }
+            });
+        });
+    });
+</script>
+
+<div class="container m-auto w-75 mx-auto mt-3">
+    <div class="row bg-white shadow-sm">
+        <div class="col border rounded p-4">
+            <h3 class="text-center mb-4">Прикрепить тренера к центру</h3>
+            @using (Html.BeginForm(nameof(ManageController.SetBindWithTrainer), ManageController.Manage, FormMethod.Post))
+            {
+                <div class="form-group mb-3 form-element text-danger">
+                    @Html.ValidationSummary(true)
+                </div>
+                <div class="row">
+                    <div class="col">
+                        @await Component.SelectAsync(Html, m => m.IsnTrainer, trainers)
+                    </div>
+                </div>
+
+                <div class="form-group mb-3 form-element">
+                    <div class="float-end">
+                        <button type="button" value="true" class="btn btn-outline-primary" id="btnAddTrainer">Добавить</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PomaPlayer.SoftwareArchitecture.Storage.MS_SQL\PomaPlayer.SoftArc.Storage.MS_SQL.csproj" />
+  </ItemGroup>
+
+</Project>

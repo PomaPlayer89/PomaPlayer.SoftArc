@@ -1,0 +1,102 @@
+﻿@using PomaPlayer.SoftArc.Components.Extensions;
+@using PomaPlayer.SoftArc.Web.Controllers;
+@using PomaPlayer.SoftArc.Web.Features.DtoModels.Customer;
+@model InfoCustomerDto
+@{
+    ViewBag.Title = "Сведения о клиенте";
+}
+
+<div class="container m-auto w-75 mx-auto mt-3">
+    <div class="row bg-white shadow-sm">
+        <div class="col border rounded p-4">
+            <h3 class="text-center mb-4">Сведения о клиенте</h3>
+            <div class="row">
+                <div class="col">
+                    @await Component.TextAsync(Html, m => m.SurName, readOnly: true)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @await Component.TextAsync(Html, m => m.Name, readOnly: true)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @await Component.TextAsync(Html, m => m.LastName, readOnly: true)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @await Component.TextAsync(Html, m => m.Birthday, readOnly: true)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container m-auto w-75 mx-auto mt-3">
+    <div class="row bg-white shadow-sm">
+        <div class="col border rounded p-4" id="MesDistributionSchedules_Form">
+            <h3 class="text-center mb-4">Сведения о центре</h3>
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Наименование</th>
+                        <th scope="col">Город</th>
+                        <th scope="col">Улица</th>
+                        <th scope="col">Дом</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.Center.Name</td>
+                        <td>@Model.Center.AddressCity</td>
+                        <td>@Model.Center.AddressStreet</td>
+                        <td>@Model.Center.AddressNumberHouse</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container m-auto w-75 mx-auto mt-3">
+    <div class="row bg-white shadow-sm">
+        <div class="col border rounded p-4" id="MesDistributionSchedules_Form">
+            <h3 class="text-center mb-4">Тренеры клиента</h3>
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Фамилия</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Отчество</th>
+                        <th scope="col">Специализация</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Trainers)
+                    {
+                        <tr>
+                            <td>@item.SurName</td>
+                            <td>@item.Name</td>
+                            <td>@item.LastName</td>
+                            <td>@item.Specialization</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container m-auto w-75 mx-auto mt-3">
+    <div class="row bg-white shadow-sm">
+        <div class="col border rounded p-4">
+            <div class="form-group form-element">
+                <div class="float-start">
+                    <a class="btn btn-outline-secondary" href="@Url.ActionLink(nameof(ManageController.GetListCenters), ManageController.Manage)">К списку клиентов</a>
+                </div>
+                <div class="float-end">
+                    <a class="btn btn-outline-success" href="@Url.ActionLink(nameof(ManageController.GetEditCustomer), ManageController.Manage, new { isnCustomer = Model.IsnNode })">Редактировать</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
